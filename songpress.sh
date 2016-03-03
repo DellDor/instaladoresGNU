@@ -37,4 +37,4 @@ EOD
 
 sudo cp -v $(xdg-user-dir DESKTOP)/songpress.desktop /usr/share/applications/songpress.desktop
 sudo chmod a+x {/usr/share/applications,$(xdg-user-dir DESKTOP)}/songpress.desktop
-sudo update-menus
+sudo update-menus; sudo xdg-desktop-menu forceupdate
