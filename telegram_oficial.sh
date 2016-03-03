@@ -192,5 +192,7 @@ Comment[es]=Mensagería intantanea.
 Icon=/opt/telegram/telegram.svg
 Categories=Network;
 EOD
-
 sudo xdg-desktop-menu forceupdate
+
+#Enlace a bin
+sudo ln -sf $destino/Telegram /usr/bin/telegram
