@@ -1,7 +1,7 @@
 #!/bin/bash
 #Instala el cliente oficial de Telegram en GNU/Linux 32 bits
 #Requiere wget, tar, cat, mv, mkdir, grep, cut, mkdir
-#HACER: detectar plataforma y elegir automáticamente 32 o 64 bits
+#HACER: detectar plataforma y elegir automáticamente 32 o 64 bits, aunque parece ser el mismo archivo en https://desktop.telegram.org/
 #Idea tomada del paquete del PPA (Launchpad) de Lorenzo Carbonell Cerezo aka "Atareao"
 
 #Define variables. Temporal puede ser /tmp si no se quiere conservar la fuente
