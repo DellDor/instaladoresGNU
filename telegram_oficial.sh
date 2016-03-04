@@ -1,18 +1,24 @@
 #!/bin/bash
 #Instala el cliente oficial de Telegram en GNU/Linux 32 bits
 #Requiere wget, tar, cat, mv, mkdir, grep, cut, mkdir
-#HACER: detectar plataforma y elegir automáticamente 32 o 64 bits, aunque parece ser el mismo archivo en https://desktop.telegram.org/
 #Idea tomada del paquete del PPA (Launchpad) de Lorenzo Carbonell Cerezo aka "Atareao"
 
 #Define variables. Temporal puede ser /tmp si no se quiere conservar la fuente
 temporal=/var/tmp
 destino=/opt/telegram
 
+#Definimos según arquitectura
+if [ $(uname -m) == 'i686' ]; then
+fuente=linux32
+else
+fuente=linux
+fi
+
 #Obtiene nombre de archivo remoto
-archivo=$(basename $(LANG=C wget --spider https://tdesktop.com/linux32 2>&1 |grep "tar.xz$"| cut -d'-' -f7))
+archivo=$(basename $(LANG=C wget --spider https://tdesktop.com/$fuente 2>&1 |grep "tar.xz$"| cut -d'-' -f7))
 
 #Descarga
-wget -P$temporal -c --trust-server-names https://tdesktop.com/linux32
+wget -P$temporal -c --trust-server-names https://tdesktop.com/$fuente
 
 #Descomprime
 tar -xvf $temporal/$archivo
@@ -194,5 +200,5 @@ Categories=Network;
 EOD
 sudo xdg-desktop-menu forceupdate
 
-#Enlace a bin
+#Enlace a bin, para poder ser llamado desde terminal
 sudo ln -sf $destino/Telegram /usr/bin/telegram
