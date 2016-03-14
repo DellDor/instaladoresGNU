@@ -21,7 +21,7 @@ archivo=$(basename $(LANG=C wget --spider https://tdesktop.com/$fuente 2>&1 |gre
 wget -P$temporal -c --trust-server-names https://tdesktop.com/$fuente
 
 #Descomprime
-tar -xvf $temporal/$archivo
+tar -xvf $temporal/$archivo -C$temporal
 
 #Crea ícono
 cat <<EOD >$temporal/Telegram/telegram.svg
