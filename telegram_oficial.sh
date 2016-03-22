@@ -3,6 +3,9 @@
 #Requiere wget, tar, cat, mv, mkdir, grep, cut, mkdir
 #Idea tomada del paquete del PPA (Launchpad) de Lorenzo Carbonell Cerezo aka "Atareao"
 
+#Para descargar y activar
+#wget -N -P/var/tmp https://raw.githubusercontent.com/DellDor/instaladoresGNU/master/#~telegram_oficial.sh && chmod a+x /var/tmp/telegram_oficial.sh && bash /var/tmp/telegram_oficial.sh
+
 #Define variables. Temporal puede ser /tmp si no se quiere conservar la fuente
 temporal=/var/tmp
 destino=/opt/telegram
